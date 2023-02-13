@@ -1,0 +1,15 @@
+
+class Codechef
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		Scanner kb=new Scanner(System.in);
+		int t=kb.nextInt();
+		while(t-->0)
+		{
+		    int no;
+		     no=kb.nextInt();
+		    System.out.println(no*15);
+		}
+	}
+}

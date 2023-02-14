@@ -1,0 +1,24 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+	int n;
+	cin>>n;
+	while(n--)
+	{
+	    int a,b,c;
+	    cin>>a>>b>>c;
+	    int correct =b*3;
+	    int wrong=(a-b)*-1;
+	    int total=correct+wrong;
+	    if(total <c)
+	    {
+	        cout<<"FAIL"<<endl;
+	    }
+	    else
+	    {
+	        cout<<"PASS"<<endl;
+	    }
+	}
+	return 0;
+}

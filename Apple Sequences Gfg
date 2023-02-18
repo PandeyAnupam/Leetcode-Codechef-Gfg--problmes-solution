@@ -1,0 +1,32 @@
+class Solution{
+    public static int appleSequence(int n, int m, String arr){
+       int start = 0;
+        int count =0;
+        int max =0;
+        char c[]=arr.toCharArray();
+        for(int i=0 ; i<n; i++)
+        {
+            if(c[i] =='A')
+            {
+                max = Math.max(max, i-start+1);
+            }
+            if(c[i]=='O')
+            { // increment count of O
+                count++;
+
+                // handle the case when count becomes more than spell avaialble
+                if(count>m)
+                {
+                    //seacrh in range of [st-i) count of A and move st ahead bt this count;
+                    while(start<i && c[start]=='A')
+                    start++;
+
+                    start++;
+                }
+            max = Math.max(max, i-start+1);
+            }    
+
+        }
+        return max; 
+    }
+}

@@ -1,0 +1,47 @@
+
+class Solution {
+  public:
+     void inorder(struct Node* root,pair<int,Node*> &f,pair<int,Node*> &s)
+
+    {
+
+        if(root==NULL) return;
+
+        
+
+        inorder(root->left,f,s);
+
+        if(f.first==-1 or (f.first<root->data and s.first==-1)) f={root->data,root};
+
+        else if(s.first==-1 or s.first>root->data) s={root->data,root};
+
+        inorder(root->right,f,s);
+
+    }
+
+  
+
+    struct Node *correctBST(struct Node *root) {
+
+        if(root==NULL) return root;
+
+        pair<int,Node*> f={-1,NULL},s={-1,NULL};
+
+        inorder(root,f,s);
+
+        
+
+        //second num is -1 meanse bst in in appropriate order
+
+        if(s.first==-1) return root;
+
+        
+
+        f.second->data=s.first;
+
+        s.second->data=f.first;
+
+        return root;
+        
+    }
+};

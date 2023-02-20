@@ -1,0 +1,29 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+	int n;
+	cin>>n;
+	
+	int asum=0,bsum=0,maxlead=0,p=0;
+	while(n--)
+	{
+	    int a,b;
+	    cin>>a>>b;
+	    
+	    asum+=a;
+	    bsum+=b;
+	    
+	    int diff=abs(asum-bsum);
+	    if(diff>maxlead)
+	    {
+	    maxlead=diff;
+	    if(asum>bsum)
+	    p=1;
+	    else
+	    p=2;
+	}
+}
+cout<<p<<" "<<maxlead;
+	return 0;
+}

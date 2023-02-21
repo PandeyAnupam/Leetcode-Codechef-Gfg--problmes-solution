@@ -1,0 +1,10 @@
+class Solution
+{
+	public static int minIteration(int N, int M, int x, int y){
+		int first = Math.abs(x-1-0)+Math.abs(y-1-0);
+		int second = Math.abs(x-N)+Math.abs(y-1-0);
+		int third = Math.abs(x-1-0)+Math.abs(y-M);
+		int fourth = Math.abs(x-N)+Math.abs(y-M);
+		return Math.max(first,Math.max(second,Math.max(third,fourth)));
+	}
+}

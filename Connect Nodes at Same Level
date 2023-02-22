@@ -1,0 +1,33 @@
+    Queue<Node> q = new LinkedList<>();
+
+        q.add(root);
+
+        while(!q.isEmpty()) {
+
+            int n = q.size();
+
+            Node root1 = q.peek();
+
+            if(root1.left != null) q.add(root1.left);
+
+            if(root1.right != null) q.add(root1.right);
+
+            q.remove();
+
+            for(int i=0; i<n-1; i++) {
+
+                Node root2 = q.peek();
+
+                if(root2.left != null) q.add(root2.left);
+
+                if(root2.right != null) q.add(root2.right);
+
+                q.remove();
+
+                root1.nextRight = root2;
+
+                root1 = root2;
+
+            }
+
+            root1.nextRight = null;

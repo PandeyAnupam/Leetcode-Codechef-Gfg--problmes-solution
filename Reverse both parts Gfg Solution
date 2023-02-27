@@ -1,0 +1,47 @@
+
+class Solution {
+     
+    public static Node reverseList(Node head)
+    {
+        
+        Node prev = null;
+        Node curr = head;
+        Node next;
+
+        while(curr != null) {
+            next = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = next;
+        }
+        return prev;
+    }
+    
+    public static Node reverse(Node head, int k) {
+        
+        Node temp = head;
+        int i=1;
+        while(i<k) {
+            temp = temp.next;
+            i++;
+        }
+        Node ptr = temp.next;
+        temp.next = null;
+        head = reverseList(head);
+        ptr = reverseList(ptr);
+        
+        temp = head;
+        i=1;
+        while(i<k) {
+            temp = temp.next;
+            i++;
+        }
+        temp.next = ptr;
+        
+        return head;
+    }
+}
+ 
+
+
+        

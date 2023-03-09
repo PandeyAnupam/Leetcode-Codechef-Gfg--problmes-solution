@@ -1,0 +1,40 @@
+
+class Solution {
+    public static ArrayList<Node> findAnagrams(Node head, String s) {
+          if (head == null) return new ArrayList<>();
+        int[] f = new int[26];
+        int[] t = new int[26];
+        int n = s.length();
+        Node prev = null;
+        for (char c : s.toCharArray()) {
+            f[c - 'a']++;
+        }
+        ArrayList<Node> al = new ArrayList<>();
+        Node tail = head;
+        while (tail != null && n-- > 0) {
+            t[tail.data - 'a']++;
+            prev = tail;
+            tail = tail.next;
+        }
+        if (Arrays.equals(f, t)) {
+            al.add(head);
+            prev.next = null;
+            al.addAll(findAnagrams(tail, s));
+        } else {
+            while (tail != null) {
+                t[head.data - 'a']--;
+                t[tail.data - 'a']++;
+                if (Arrays.equals(f, t)) {
+                    al.add(head.next);
+                    al.addAll(findAnagrams(tail.next, s));
+                    tail.next = null;
+                } else {
+                    prev = tail;
+                    head = head.next;
+                    tail = tail.next;
+                }
+            }
+        }
+        return al;
+    }
+}

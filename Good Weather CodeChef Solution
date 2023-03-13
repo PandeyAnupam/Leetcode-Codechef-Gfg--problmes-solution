@@ -1,0 +1,24 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+	int t;
+	cin>>t;
+	while(t--)
+	{
+	    int good=0;
+	    for(int i=0;i<7;i++)
+	    {
+	        int num;
+	        cin>>num;
+	        
+	        if(num==1)
+	        ++good;
+	    }
+	    if(good>=4)
+	    cout<<"YES"<<endl;
+	    else
+	    cout<<"NO"<<endl;
+	}
+	return 0;
+}

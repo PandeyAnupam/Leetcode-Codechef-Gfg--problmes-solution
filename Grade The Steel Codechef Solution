@@ -1,0 +1,30 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+	
+	int t;
+	cin>>t;
+	while(t--)
+	{
+	    int hard,strength,grade;
+	    float carbon;
+	    cin>>hard>>carbon>>strength;
+	    
+	    if(hard>50 && carbon<0.7 && strength>5600)
+	    strength=10;
+	    else if(hard>50 && carbon<0.7)
+	    strength=9;
+	    else if(carbon<0.7 && strength>5600)
+	    strength=8;
+	    else if(hard>50 && strength >5600)
+	    strength=7;
+	    else if(hard>50 || carbon<0.7|| strength>5600)
+	    strength=6;
+	    else 
+	    strength=5;
+	    cout<<strength<<endl;
+	}
+	return 0;
+	
+}

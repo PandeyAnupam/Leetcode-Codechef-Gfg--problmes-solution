@@ -1,0 +1,23 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+	int t;
+	cin>>t;
+	while(t--)
+	{
+	    int x,y,xr,yr,d;
+	    cin>>x>>y>>xr>>yr>>d;
+	    
+	    int food=x/xr;
+	    int water=y/yr;
+	    
+	    int have =min(water,food);
+	    
+	    if(have>=d)
+	    cout<<"YES"<<endl;
+	    else
+	    cout<<"NO"<<endl;
+	}
+	return 0;
+}

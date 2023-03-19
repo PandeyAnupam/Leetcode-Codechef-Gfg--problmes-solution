@@ -1,0 +1,25 @@
+vector<int> getDistinctDifference(int n, vector<int> &a) {
+        unordered_map<int , int> m, m1;
+        vector<int> d(a.size());
+        vector<int> d1(a.size());
+        vector<int> r;
+        vector<int> c = a;
+        reverse(c.begin(),c.end());
+        
+        int j = 0;
+        int k = a.size()-1;
+        
+        for(auto i:c)
+        {
+            d1[k] = m1.size();
+            m1[i]++;
+            k--;
+        }
+        for(auto i:a)
+        {
+            d[j] = m.size();
+            r.push_back(d[j]-d1[j]);
+            m[i]++;
+            j++;
+        }
+        return r;

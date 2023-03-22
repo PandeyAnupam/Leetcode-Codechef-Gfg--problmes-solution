@@ -1,0 +1,24 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+	
+int t;
+cin>>t;
+while(t--)
+{
+    int x,y,p,q;
+    cin>>x>>y>>p>>q;
+    
+    int time1=x+(p*10);
+    int time2=y+(q*10);
+    
+    if(time1<time2)
+    cout<<"Chef"<<endl;
+    else if(time1>time2)
+    cout<<"Chefina"<<endl;
+    else
+    cout<<"Draw"<<endl;
+}
+	return 0;
+}

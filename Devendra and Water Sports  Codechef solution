@@ -1,0 +1,20 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+	int t;
+	cin>>t;
+	while(t--)
+	{
+	    int z,y,a,b,c;
+	    cin>>z>>y>>a>>b>>c;
+	    
+	    int have=z-y;
+	    int need=a+b+c;
+	    if(have>=need)
+	    cout<<"YES"<<endl;
+	    else
+	    cout<<"NO"<<endl;
+	}
+	return 0;
+}

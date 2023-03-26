@@ -1,0 +1,21 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+	int num;
+	cin>>num;
+	
+	int count=0;
+	while(num>0)
+	{
+	    int rem=num%10;
+	    ++count;
+	    num=num/10;
+	}
+	
+	if(count<=3)
+	cout<<count;
+	else
+	cout<<"More than 3 digits";
+	return 0;
+}

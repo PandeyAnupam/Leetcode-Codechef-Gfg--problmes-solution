@@ -1,0 +1,29 @@
+class Solution 
+{ 
+    int countSubstring(String S) 
+    { 
+     
+                        int ans = 0;
+
+
+            for (int i = 0; i < S.length(); i++) {
+                int counts = 0;
+                int countc = 0;
+                for (int j = i; j < S.length(); j++) {
+                    int ch = S.charAt(j);
+                    if (ch >= 97 && ch <= 122) {
+                        counts++;
+                    } else {
+                        countc++;
+                    }
+                    if (counts == countc) {
+                        ans++;
+
+                    }
+
+                }
+            }
+
+            return ans;
+        }
+        }

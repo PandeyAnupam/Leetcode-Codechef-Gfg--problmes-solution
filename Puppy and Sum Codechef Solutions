@@ -1,0 +1,27 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+	
+	int t;
+	cin>>t;
+	while(t--)
+	{
+	    int d,n;
+	    cin>>d>>n;
+	     
+	     for(int i=0;i<d;i++)
+	     {
+	         int sum=0;
+	         for(int j=0;j<=n;j++)
+	         {
+	             sum=sum+j;
+	         }
+	         n=sum;
+	     }
+	     cout<<n<<endl;
+	}
+	return 0;
+}
+
+

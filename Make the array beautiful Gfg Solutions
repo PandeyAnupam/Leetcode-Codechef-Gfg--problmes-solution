@@ -1,0 +1,23 @@
+
+class Solution {
+    public static ArrayList<Integer> makeBeautiful(int[] arr) {
+        ArrayList<Integer> list=new ArrayList<>();
+        Stack<Integer> stack=new Stack<>();
+        for(int i=0;i<arr.length;i++){
+            if(stack.isEmpty()){
+                stack.push(arr[i]);
+            } else if(arr[i]>=0 && stack.peek()>=0){
+                stack.push(arr[i]);
+            } else if(arr[i]<0 && stack.peek()<0){
+                stack.push(arr[i]);
+            } else {
+                stack.pop();
+            }
+        }
+        while(!stack.isEmpty()){
+            list.add(stack.pop());
+        }
+        Collections.reverse(list);
+        return list;
+    }
+}

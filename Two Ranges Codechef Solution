@@ -1,0 +1,27 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+	
+	int t;
+	cin>>t;
+	while(t--)
+	{
+	    int a,b,c,d;
+	    cin>>a>>b>>c>>d;
+	    int count=0;
+	    
+	    int arr[]={0,0,0,0,0,0,0,0,0};
+	    for(int i=a;i<=b;i++)
+	    arr[i]=1;
+	    
+	    for(int i=c;i<=d;i++)
+	    arr[i]=1;
+	    
+	    for(int i=1;i<=8;i++)
+	    if(arr[i]==1)
+	    count++;
+	    cout<<count<<endl;
+	}
+	return 0;
+}

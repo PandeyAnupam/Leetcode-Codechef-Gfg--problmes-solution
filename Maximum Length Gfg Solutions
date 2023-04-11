@@ -1,0 +1,17 @@
+
+class Solution {
+    int solve(int a, int b, int c) {
+        int mi=0,ma=0,p=0,k=0;
+        ma=Math.max(a,b);
+        ma=Math.max(ma,c);
+        mi=Math.min(a,b);
+        mi=Math.min(mi,c);
+        k=a+b+c;
+        p=k-(ma+mi);
+        if((ma==p+1) || (ma==p)) return(a+b+c);
+        else{
+            if((mi+p)*2+2>=ma) return(a+b+c);
+            else return(-1);
+        }  
+    }
+};

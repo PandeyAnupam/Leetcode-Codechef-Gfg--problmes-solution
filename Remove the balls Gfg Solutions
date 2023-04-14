@@ -1,0 +1,22 @@
+
+class Solution {
+    public static int finLength(int N, int[] color, int[] radius) {
+         Stack<Integer>col = new Stack<>();
+        Stack<Integer>rad = new Stack<>();
+        for(int i=0;i<N;i++)
+        {
+            if(!col.isEmpty() && col.peek()==color[i] && rad.peek()==radius[i])
+            {
+                col.pop();
+                rad.pop();
+            }
+            else
+            {
+                col.push(color[i]);
+                rad.push(radius[i]);
+            }
+        }
+        return col.size();
+    }
+}
+        

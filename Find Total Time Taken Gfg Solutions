@@ -1,0 +1,20 @@
+
+class Solution
+{
+    public static long totalTime(int n,int arr[],int time[])
+    {
+        
+        Map<Integer,Integer> map = new HashMap<>();
+        int ans = 0;
+        map.put(arr[0],time[0]);
+        for(int i=1; i<n; i++){
+            if(map.containsKey(arr[i])){
+                ans += time[arr[i]-1];
+            }else{
+                ans++;
+            }
+            map.put(arr[i],time[i]);
+        }
+        return ans;
+    }
+}

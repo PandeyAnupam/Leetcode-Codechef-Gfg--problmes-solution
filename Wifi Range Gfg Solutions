@@ -1,0 +1,22 @@
+class Solution{
+    public:
+    bool wifiRange(int N, string S, int X){
+        // code here
+        int prev=-1;
+        for(int i =0 ; i<N;i++ )
+        {
+            if(S[i]=='1')
+            {
+                if(i-X-1==prev)
+                {
+                    prev =max(prev, i+X) ;
+                }
+                else if(i-X > prev)
+                return 0 ;
+                
+                prev =max(prev, i+X) ;
+            }
+        }
+        return prev>=N-1 ? 1 : 0  ;
+    }
+};

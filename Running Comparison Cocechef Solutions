@@ -1,0 +1,33 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+	int t;
+	cin>>t;
+	while(t--)
+	{
+	    int n;
+	    cin>>n;
+	string str;
+	cin>>str;
+	
+	int count=0,flag=0;
+	for(int i=0;i<n;i++)
+	{
+	    char ch=str[i];
+	    if(ch=='a'|| ch=='e'||ch=='i'||ch=='o'||ch=='u')
+	    count=0;
+	    else
+	    count++;
+	    if(count>=4)
+	    {
+	        flag=1;
+	        break;
+	    }
+	}
+	if(flag==1)
+	cout<<"NO"<<endl;
+	else
+	cout<<"YES"<<endl;
+	return 0;
+}

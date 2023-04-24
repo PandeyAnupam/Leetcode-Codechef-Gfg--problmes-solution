@@ -1,0 +1,39 @@
+class Solution
+{
+    
+public:
+    vector<int> nearestSmallerTower(vector<int> arr)
+    {
+        // code here
+        int n=arr.size();
+        vector<int> ans(n,-1);
+        stack<int> s1;
+        for(int i=0;i<n;i++){
+            while(s1.size()>0 and arr[s1.top()]>=arr[i])
+                s1.pop();
+            if(s1.size()>0)
+                ans[i]=s1.top();
+            s1.push(i);
+        }
+        while(s1.size())
+            s1.pop();
+        for(int i=n-1;i>=0;i--){
+            while(s1.size()>0 and arr[s1.top()]>=arr[i])
+                s1.pop();
+            if(s1.size()>0){
+                if(ans[i]==-1)
+                    ans[i]=s1.top();
+                else{
+                    if((i-ans[i])>(s1.top()-i))
+                        ans[i]=s1.top();
+                    else if((i-ans[i])==(s1.top()-i)){
+                        if(arr[ans[i]]>arr[s1.top()])
+                            ans[i]=s1.top();
+                    }
+                }
+            }
+            s1.push(i);
+        }
+        return ans;
+    }
+};

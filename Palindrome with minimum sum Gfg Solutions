@@ -1,0 +1,35 @@
+class Solution {
+    public static int minimumSum(String s) {
+        // code here
+        int n=s.length();
+        
+        char arr[] = s.toCharArray();
+        int i=0; int j=n-1;
+        
+        while(i<=j){
+            if(arr[i]!=arr[j]){
+                if(arr[i]=='?'){
+                    arr[i]=arr[j];
+                }else if(arr[j]=='?'){
+                    arr[j]=arr[i];
+                }else return -1;
+            } 
+            i++; j--;
+        }
+        
+        i=0; j=n-1;
+        int ans=0; char prev='?';
+        
+        while(i<=j){
+            char cur=arr[i];
+            if(cur!='?'){
+                if(prev!='?') ans+=Math.abs(cur-prev);
+                prev=cur;
+            }
+            
+            i++; j--;
+        }
+        
+        return 2*ans;
+    }
+}

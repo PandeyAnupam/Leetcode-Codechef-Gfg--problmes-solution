@@ -1,0 +1,27 @@
+class Solution {
+    public static long countBits(long N) {
+        // code here
+        if(N==0)
+        {
+            return 0;
+        }
+        int pow=maxpow(N);
+        long bits_under_maxpow=pow*(1<<(pow-1));
+        long msb_cnt=N-(1<<pow)+1;
+        long rest=N-(1<<pow);
+        
+        long ans=bits_under_maxpow+msb_cnt+countBits(rest);
+        
+        return ans;
+    }
+    public static int maxpow(long n)
+    {
+        int x=0;
+        while((1<<x)<=n)
+        {
+            x++;
+        }
+        return x-1;
+    }
+}
+

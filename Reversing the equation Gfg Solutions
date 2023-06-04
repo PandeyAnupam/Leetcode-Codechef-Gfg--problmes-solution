@@ -1,0 +1,24 @@
+class Solution
+{
+   
+    String reverseEqn(String S)
+    {
+        Stack<String> stack = new Stack<>();
+        int i=0 , n= S.length();
+        while(i<n){
+            String s="";
+            while(i<n && S.charAt(i) >='0' && S.charAt(i) <='9'){
+                s+= S.charAt(i);
+                i++;
+            }
+            stack.push(s);
+            if(i<n){
+                stack.push(S.charAt(i)+"");
+                i++;
+            }
+        }
+        StringBuilder sb = new StringBuilder("");
+        while(!stack.isEmpty()) sb.append(stack.pop());
+        return sb.toString();
+    }
+}

@@ -1,0 +1,90 @@
+class Solution {
+public char nextGreatestLetter(char[] letters, char target) {
+int left = 0;
+int right = letters.length-1;
+while(left<=right){
+int mid = left +(right-left)/2;
+if(letters[mid]>target){
+right=mid-1;
+}
+else{
+left = mid+1;
+}
+}
+return letters[left%letters.length];
+}
+}
+Previous
+C++ || Binary Search || Easy to Understand
+Next
+C++ | Easy + Fast Solution | Binary Search | Linear Search
+Comments (6)
+
+Sort by:Best
+Type comment here... (Markdown supported)
+Preview
+Comment
+
+groovygrape
+11 hours ago
+This solution is bad. Code is so ugly and no explaanation?????
+
+Why does it have upvotes?????
+
+6
+
+oyreo
+12 hours ago
+!! BIG ANNOUNCEMENT !!
+I am currently Giving away my premium content well-structured assignments and study materials to clear interviews at top companies related to computer science and data science to my current Subscribers. This is only for the first 10,000 Subscribers. DON'T FORGET to Subscribe.
+
+Click this Link to Subscribe 👉https://www.youtube.com/@techwired8/?sub_confirmation=1
+
+Read more
+2
+
+oyreo
+13 hours ago
+CLEAR VIDEO EXPLANATION
+
+Click this Link to Subscribe 👉https://www.youtube.com/@techwired8/?sub_confirmation=1
+
+
+
+Read more
+2
+
+mozzaram
+10 hours ago
+ugly code
+
+1
+
+kunadilov
+SQL I
+42 minutes ago
+I like the idea of return statement!
+letters[left%letters.length]
+
+0
+
+Mukesh_Khemani
+6 hours ago
+https://leetcode.com/problems/find-smallest-letter-greater-than-target/solutions/3617101/simple-beginner-friendly-c-solution-with-intuition-and-explanation-easy-to-understand/
+Simple and beginner friendly c++ solution with intuition and step-by-step explanation. Glad to help.
+
+0
+
+Upvote 11
+
+
+
+Java
+
+Auto
+
+
+
+
+
+

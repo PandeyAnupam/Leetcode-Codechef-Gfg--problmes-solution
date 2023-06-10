@@ -1,0 +1,33 @@
+class Solution {
+
+  class Pair {
+    int val;
+    int ind;
+    Pair(int val, int ind) {
+      this.val = val;
+      this.ind = ind;
+    }
+  }
+  public void Rearrange(int a[], int n) {
+    PriorityQueue < Pair > pq = new PriorityQueue < > ((a1, b) -> a1.val - b.val),
+      pq1 = new PriorityQueue < > ((a1, b) -> a1.ind - b.ind);
+    for (int i = 0; i < n; i++) {
+      pq.add(new Pair(a[i], i));
+    }
+    int i = 0;
+    while (!pq.isEmpty() && pq.peek().val < 0) {
+      pq1.add(pq.poll());
+    }
+    while (!pq1.isEmpty()) {
+      a[i] = pq1.poll().val;
+      i++;
+    }
+    while (!pq.isEmpty() && pq.peek().val >= 0) {
+      pq1.add(pq.poll());
+    }
+    while (!pq1.isEmpty()) {
+      a[i] = pq1.poll().val;
+      i++;
+    }
+  }
+}

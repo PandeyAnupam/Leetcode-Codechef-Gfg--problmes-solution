@@ -1,0 +1,35 @@
+class Solution {
+  public:
+    bool lemonadeChange(int N, vector<int> &bills) {
+        // code here
+           int five=0,ten=0,twenty=0;
+        for(int i=0;i<N; i++){
+            if(bills[i]==5){
+                five++;
+            }
+            else if(bills[i]==10){
+                if(five>0){
+                    five--;   
+                    ten++;
+                }
+                else{
+                    return 0;
+                }
+            }
+            else if(bills[i]==20){
+                if(five> 0 && ten>0){
+                    five--,ten--;
+                    twenty++;
+                }
+                else if(five >=3){
+                    five=five-3;
+                    twenty++;
+                }
+                else{
+                    return 0;
+                }
+            }
+        }
+        return 1;
+    }
+};

@@ -1,0 +1,16 @@
+class Solution {
+    static int leastInterval(int N, int K, char tasks[]) {
+        // code here
+        int f[] = new int [26];
+        for(char task: tasks){
+            f[task-'A']++;
+        }
+        Arrays.sort(f);
+        int maxfre = f[25]-1;
+        int idle = (maxfre)*K;
+        for(int i=24;i>=0;i--){
+            idle-=Math.min(maxfre,f[i]);
+        }
+        return (idle<0)? tasks.length: idle+tasks.length;
+    }
+}

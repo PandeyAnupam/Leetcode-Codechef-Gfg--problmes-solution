@@ -1,0 +1,22 @@
+class GfG
+{
+    public static ArrayList<ArrayList<Integer>> uniqueRow(int a[][],int r, int c)
+    {
+        //add code here.
+        Set<ArrayList<Integer>> x = new LinkedHashSet<>();
+        ArrayList<ArrayList<Integer>> x1= new ArrayList<>();
+        for(int i=0;i<r;i++){
+            ArrayList<Integer> x2= new ArrayList<>();
+            for(int j=0;j<c;j++){
+                x2.add(a[i][j]);
+            }
+            x.add(x2);
+            
+        }
+        for(ArrayList<Integer> y:x){
+            x1.add(y);
+        }
+        return x1;
+    }
+}
+

@@ -1,0 +1,10 @@
+class Solution {
+  public static int maxDepth(Node root) {
+    // code here
+    if(root == null)
+    return 0;
+    int lst = maxDepth(root.left);
+    int rst = maxDepth(root.right);
+    return Math.max(lst,rst)+1;
+  }
+}

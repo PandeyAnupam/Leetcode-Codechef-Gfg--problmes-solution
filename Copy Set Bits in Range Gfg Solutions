@@ -1,0 +1,42 @@
+
+class Solution{
+    static int setSetBit(int x, int y, int l, int r){
+        // code here
+        int result = x;
+        int pow = 1;
+        int digit =1;
+        while(digit!=l){
+            x=x/2;
+            y=y/2;
+            if(digit!=1){
+                pow= pow*2;
+            } 
+            digit++;
+        }
+        for(int i =1; i<=r-l+1; i++){
+            //System.out.println("x: "+x+"y: "+y);
+            if(digit != 1){
+                pow = pow*2;
+            } else {
+                digit++;
+            }
+            if(y==1){
+                int bitx = x%2;
+                //System.out.println("bitx: "+bitx+"pow: "+pow);
+                if(bitx ==0){
+                    result+=pow;
+                }
+                return result;
+            }
+            int bitx = x%2;
+            int bity = y%2;
+            if(bity ==1 && bitx==0){
+                 result+=pow;
+            }
+            x = x/2;
+            y = y/2;
+        }
+        return result;
+    }
+
+}
